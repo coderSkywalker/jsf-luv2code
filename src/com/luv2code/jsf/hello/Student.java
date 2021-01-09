@@ -14,6 +14,9 @@ public class Student {
 	private String favoriteProgrammingLanguage;
 	
 	private List<String> countryOptions;
+	private List<String> languageOptions;
+	
+	private List<String> favoriteProgrammingLanguages;
 	
 	public Student() {
 		countryOptions = new ArrayList<String>();
@@ -36,6 +39,16 @@ public class Student {
 		countryOptions.add("Japan");
 		countryOptions.add("Kazakchstan");
 		countryOptions.add("Monaco");
+		
+		languageOptions = new ArrayList<String>();
+		
+		languageOptions.add("Assembler");
+		languageOptions.add("C");
+		languageOptions.add("C#");
+		languageOptions.add("C++");
+		languageOptions.add("Fortran");
+		languageOptions.add("Java");
+		languageOptions.add("PHP");
 		
 	}
 	
@@ -73,6 +86,18 @@ public class Student {
 	
 	public List<String> getCountryOptions() {
 		return countryOptions;
+	}
+	
+	public List<String> getLanguageOptions() {
+		return languageOptions;
+	}
+
+	public List<String> getFavoriteProgrammingLanguages() {
+		return favoriteProgrammingLanguages;
+	}
+
+	public void setFavoriteProgrammingLanguages(List<String> favoriteProgrammingLanguages) {
+		this.favoriteProgrammingLanguages = favoriteProgrammingLanguages;
 	}
 	
 }
