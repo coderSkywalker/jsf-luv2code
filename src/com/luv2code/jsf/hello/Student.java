@@ -1,5 +1,8 @@
 package com.luv2code.jsf.hello;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean
@@ -9,10 +12,32 @@ public class Student {
 	private String lastName;
 	private String country;
 	
+	private List<String> countryOptions;
+	
 	public Student() {
+		countryOptions = new ArrayList<String>();
+		
+		countryOptions.add("Bahama");
+		countryOptions.add("Brazil");
+		countryOptions.add("Burundi");
+		countryOptions.add("Canada");
+		countryOptions.add("Costarica");
+		countryOptions.add("Denmark");
+		countryOptions.add("Egypt");
+		countryOptions.add("France");
+		countryOptions.add("Finland");
+		countryOptions.add("Germany");
+		countryOptions.add("Great Britain");
+		countryOptions.add("Haiti");
+		countryOptions.add("India");
+		countryOptions.add("Ireland");
+		countryOptions.add("Italy");
+		countryOptions.add("Japan");
+		countryOptions.add("Kazakchstan");
+		countryOptions.add("Monaco");
 		
 	}
-
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -37,5 +62,8 @@ public class Student {
 		this.country = country;
 	}
 	
+	public List<String> getCountryOptions() {
+		return countryOptions;
+	}
 	
 }
