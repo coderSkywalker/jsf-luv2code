@@ -44,6 +44,7 @@
 			<h:selectOneMenu value="#{student.country}">
 				<f:selectItems value="#{student.countryOptions}" />
 			</h:selectOneMenu>
+			<br/><br/>
 			
 			<!-- #######	hard-coded radio button   ####### -->
  
@@ -58,7 +59,30 @@
 				<f:selectItem itemValue="PHP" itemLabel="PHP" />
 			</h:selectOneRadio -->
 			
+			<h:selectOneRadio value="#{student.favoriteProgrammingLanguage}">
+				<f:selectItems value="#{student.languageOptions}" />
+			</h:selectOneRadio>
+			<br/>
 			
+			Other liked languages:
+			<!-- #######	hard-coded version checkbox		####### -->
+			<!--h:selectManyCheckbox value="#{student.favoriteProgrammingLanguages}">
+				<f:selectItem itemValue="Assembler" itemLabel="Assembler" />
+				<f:selectItem itemValue="C" itemLabel="C" />
+				<f:selectItem itemValue="C#" itemLabel="C#" />
+				<f:selectItem itemValue="C++" itemLabel="C++" />
+				<f:selectItem itemValue="Fortran" itemLabel="Fortran" />
+				<f:selectItem itemValue="Java" itemLabel="Java" />
+				<f:selectItem itemValue="PHP" itemLabel="PHP" />
+			</h:selectManyCheckbox -->
+			
+			<h:selectManyCheckbox value="#{student.favoriteProgrammingLanguages}" >
+				<f:selectItems value="#{student.languageOptions}" />
+			</h:selectManyCheckbox>
+			
+			
+			
+			<br/>
 			
 			<h:commandButton value="Submit" action="student_response" />
 			
