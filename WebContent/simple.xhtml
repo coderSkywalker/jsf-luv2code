@@ -6,16 +6,35 @@
 	xmlns:a="http://smlns.jcp.org/jsf/passthrough">
 	<h:head>
 		<title>Student Registration Form</title>
+		<style>
+			.error{color:blue}
+		</style>
 	</h:head>
 	
 	<h:body>
 		
 		<h:form>
 			
-			First name: <h:inputText id="firstName" value="#{student.firstName}" />
+			<h:messages styleClass="error" />
+				
+			First name: <h:inputText id="firstName" 
+									 value="#{student.firstName}" 
+									 label=" First name" 
+									 required="true"
+									 requiredMessage="First name is mandatory" />
+									 
+			<h:message for="firstName" styleClass="" />
 			<br/><br/>
-			Last name: <h:inputText id="lastName" value="#{student.lastName}" />
+			
+			Last name: <h:inputText id="lastName" 
+									value="#{student.lastName}" 
+									label="Last name" 
+									required="true"
+									requiredMessage="Last name is mandatory" />
+									
+			<h:message for="lastName" styleClass="" />
 			<br/><br/>
+			
 			<!--	this is version hard-coded  			
 			Country:
 			<h:selectOneMenu value="#{student.country}">
