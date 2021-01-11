@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"
 	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:a="http://smlns.jcp.org/jsf/passthrough">
@@ -40,7 +41,10 @@
 			
 			<!--	this is version hard-coded  			
 			Country:
-			<h:selectOneMenu value="#{student.country}">
+			<h:selectOneMenu value="#{student.country}"
+							 id="selectCountry"
+							 required="true"
+							 requiredMessage="country of origin is mandatory">
 				<f:selectItem itemValue="Bahama" itemLabel="Bahama" />
 				<f:selectItem itemValue="Brazil" itemLabel="Brazil" />
 				<f:selectItem itemValue="Burundi" itemLabel="Burundi" />
@@ -61,22 +65,24 @@
 			-->
 			
 			<!-- #######	this is from bean	####### -->
-			
 			Country:
 			<h:selectOneMenu value="#{student.country}"
 							 id="selectCountry"
+							 required="true"
 							 requiredMessage="country of origin is mandatory">
 				<f:selectItems value="#{student.countryOptions}" />
 			</h:selectOneMenu>
-			<br/><br/>
 			
 			<!-- #######	error message beside selectCountry		####### -->
 			<h:message for="selectCountry" styleClass="" />
+			<br/><br/>
 			
 			<!-- #######	hard-coded radio button   ####### -->
- 
 			Favorite Programming Language:
-			<!--h:selectOneRadio value="#{student.favoriteProgrammingLanguage}">
+			<!--h:selectOneRadio id="selectProgrammingLanguage"
+							     value="#{student.favoriteProgrammingLanguage}"
+							     required="true"
+							     requiredMessage="favorite programming language is mandatory"">
 				<f:selectItem itemValue="Assembler" itemLabel="Assembler" />
 				<f:selectItem itemValue="C" itemLabel="C" />
 				<f:selectItem itemValue="C#" itemLabel="C#" />
@@ -87,16 +93,23 @@
 			</h:selectOneRadio -->
 			
 			<!-- #######	radio button from bean  ####### -->
-			
-			<h:selectOneRadio value="#{student.favoriteProgrammingLanguage}">
+			<h:selectOneRadio id="selectProgrammingLanguage"
+							  value="#{student.favoriteProgrammingLanguage}"
+							  required="true"
+							  requiredMessage="favorite programming language is mandatory">
 				<f:selectItems value="#{student.languageOptions}" />
 			</h:selectOneRadio>
+			
+			<!-- #######	error message beside selectProgrammingLanguage		####### -->
+			<h:message for="selectProgrammingLanguage" styleClass="" />
 			<br/>
 			
 			Other liked languages:
 			<!-- #######	hard-coded check box		####### -->
-			
-			<!--h:selectManyCheckbox value="#{student.favoriteProgrammingLanguages}">
+			<!--h:selectManyCheckbox id="selectProgrammingLanguages"
+									 required="true"
+								  	 requiredMessage="other liked languages are mandatory"
+									 value="#{student.favoriteProgrammingLanguages}">
 				<f:selectItem itemValue="Assembler" itemLabel="Assembler" />
 				<f:selectItem itemValue="C" itemLabel="C" />
 				<f:selectItem itemValue="C#" itemLabel="C#" />
@@ -107,13 +120,15 @@
 			</h:selectManyCheckbox -->
 			
 			<!-- #######	check box from bean		####### -->
-			
-			<h:selectManyCheckbox value="#{student.favoriteProgrammingLanguages}" >
+			<h:selectManyCheckbox id="selectProgrammingLanguages"
+								  required="true"
+								  requiredMessage="other liked languages are mandatory"
+								  value="#{student.favoriteProgrammingLanguages}" >
 				<f:selectItems value="#{student.languageOptions}" />
 			</h:selectManyCheckbox>
 			
-			
-			
+			<!-- #######	error message beside selectProgrammingLanguages		####### -->
+			<h:message for="selectProgrammingLanguages" styleClass="" />						
 			<br/>
 			
 			<h:commandButton value="Submit" action="student_response" />
