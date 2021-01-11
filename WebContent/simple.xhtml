@@ -15,6 +15,7 @@
 		
 		<h:form>
 			
+			<!-- #######	list all error messages		####### -->
 			<h:messages styleClass="error" />
 				
 			First name: <h:inputText id="firstName" 
@@ -22,7 +23,8 @@
 									 label=" First name" 
 									 required="true"
 									 requiredMessage="First name is mandatory" />
-									 
+			
+			<!-- #######	error message beside firstName		####### -->						 
 			<h:message for="firstName" styleClass="" />
 			<br/><br/>
 			
@@ -31,7 +33,8 @@
 									label="Last name" 
 									required="true"
 									requiredMessage="Last name is mandatory" />
-									
+			
+			<!-- #######	error message beside lastName		####### -->						
 			<h:message for="lastName" styleClass="" />
 			<br/><br/>
 			
@@ -60,10 +63,15 @@
 			<!-- #######	this is from bean	####### -->
 			
 			Country:
-			<h:selectOneMenu value="#{student.country}">
+			<h:selectOneMenu value="#{student.country}"
+							 id="selectCountry"
+							 requiredMessage="country of origin is mandatory">
 				<f:selectItems value="#{student.countryOptions}" />
 			</h:selectOneMenu>
 			<br/><br/>
+			
+			<!-- #######	error message beside selectCountry		####### -->
+			<h:message for="selectCountry" styleClass="" />
 			
 			<!-- #######	hard-coded radio button   ####### -->
  
@@ -78,13 +86,16 @@
 				<f:selectItem itemValue="PHP" itemLabel="PHP" />
 			</h:selectOneRadio -->
 			
+			<!-- #######	radio button from bean  ####### -->
+			
 			<h:selectOneRadio value="#{student.favoriteProgrammingLanguage}">
 				<f:selectItems value="#{student.languageOptions}" />
 			</h:selectOneRadio>
 			<br/>
 			
 			Other liked languages:
-			<!-- #######	hard-coded version checkbox		####### -->
+			<!-- #######	hard-coded check box		####### -->
+			
 			<!--h:selectManyCheckbox value="#{student.favoriteProgrammingLanguages}">
 				<f:selectItem itemValue="Assembler" itemLabel="Assembler" />
 				<f:selectItem itemValue="C" itemLabel="C" />
@@ -94,6 +105,8 @@
 				<f:selectItem itemValue="Java" itemLabel="Java" />
 				<f:selectItem itemValue="PHP" itemLabel="PHP" />
 			</h:selectManyCheckbox -->
+			
+			<!-- #######	check box from bean		####### -->
 			
 			<h:selectManyCheckbox value="#{student.favoriteProgrammingLanguages}" >
 				<f:selectItems value="#{student.languageOptions}" />
