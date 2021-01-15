@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://smlns.jcp.org/jsf/passthrough">
+<head>
+	<title>Very simple form</title>
+	<style>
+		.error{color:blue}
+	</style>
+</head>
+<body>
+	<h:form>
+		First name: <h:inputText id="firstname"
+								 label="First name"
+								 value="#{student.firstName}" />
+		<br/><br/>
+								 
+		Last name: <h:inputText id="lastname"
+								label="Last name"
+								value="#{student.lastName}" />
+		<br/><br/>
+		
+		email: <h:inputText id="email"
+							label="email"
+							value="#{student.email}"
+							required="true"
+							requiredMessage="email is mandatory" />
+		<h:message for="email" styleClass="error" />
+		<br/><br/>
+			
+		Free Passes: <h:inputText id="free-passes"
+								  label="Free Passes"
+								  value="#{student.freePasses}"
+								  validatorMessage="Specified attribute is not between
+								  the expected values of 0 and 10" >
+			<f:validateLongRange minimum="0" maximum="10" />
+		</h:inputText>
+		<h:message for="free-passes" styleClass="error" />
+		<br/><br/>
+								  
+		Postal code: <h:inputText id="postal-code"
+								  label="Postal code"
+								  value="#{student.postalCode}"
+								  required="true" 
+								  requiredMessage="postal code is mandatory">
+			<f:validateLength minimum="5" maximum="5"/>						  
+		</h:inputText>
+		<h:message for="postal-code" styleClass="error" />
+		<br/><br/>
+		
+		Phone number: <h:inputText id="phone-number"
+								   label="Phone number"
+								   value="#{student.phoneNumber}"
+								   validatorMessage="phone number must be in format:
+								   ddd-ddd-dddd" >
+					  	<f:validateRegex pattern="\d{3}-\d{3}-\d{4}" />
+					  </h:inputText>
+		<h:message for="phone-number" styleClass="error" />
+		<br/><br/>
+		
+		Enter Student Code: <h:inputText id="student-code"
+										 label="Student Code"
+										 value="#{student.studentCode}"
+										 required="true"
+										 requiredMessage="Student Code is mandatory"
+										 validator="#{student.validateTheStudentCode}" />
+		<h:message for="student-code" styleClass="error" />
+		<br/><br/>								 
+		
+		<h:commandButton value="submit" action="simple-form-response" />								 
+								 
+								 
+	</h:form>
+</body>
+</html>

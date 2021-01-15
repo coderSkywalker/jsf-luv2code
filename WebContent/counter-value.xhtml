@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://smlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<head>
+
+	<title>Increase counter value</title>
+
+</head>
+<body>
+	<h:form>
+		Counter value: #{increaseCounter.counterValue}
+		<br/>
+		<h:commandButton value="Increase" action="#{increaseCounter.increaseCounterValue}" />
+	</h:form>
+</body>
+</html>
